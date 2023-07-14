@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complement Generator</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial, sans-serif;
+        }
+        
+        #complement {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        #generateButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #generateButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="complement">Click the button to generate a complement!</div>
+    <button id="generateButton" onclick="generateComplement()">GENERATE A COMPLEMENT</button>
+
+    <script>
+        var part1 = [
+            "You are",
+            "You have",
+            "Your",
+            "I admire your",
+            "Your smile is",
+            "Your kindness is",
+            "Your intelligence is",
+            "You possess",
+            "Your personality is",
+            "Your sense of humor is"
+        ];
+        
+        var part2 = [
+            "amazing",
+            "beautiful",
+            "awesome",
+            "brilliant",
+            "captivating",
+            "charming",
+            "exquisite",
+            "fantastic",
+            "gorgeous",
+            "impressive"
+        ];
+        
+        var part3 = [
+            "person",
+            "soul",
+            "heart",
+            "individual",
+            "being",
+            "human",
+            "friend",
+            "presence",
+            "spirit",
+            "gem"
+        ];
+        
+        var part4 = [
+            "I've ever known.",
+            "in the world.",
+            "to me.",
+            "you possess.",
+            "that defines you.",
+            "that lights up the room.",
+            "that makes a difference.",
+            "that brings joy to others.",
+            "that inspires those around you.",
+            "that sets you apart."
+        ];
+        
+        function getRandomElement(array) {
+            var randomIndex = Math.floor(Math.random() * array.length);
+            return array[randomIndex];
+        }
+        
+        function generateComplement() {
+            var complement = getRandomElement(part1) + " " +
+                             getRandomElement(part2) + " " +
+                             getRandomElement(part3) + " " +
+                             getRandomElement(part4);
+            
+            document.getElementById("complement").textContent = complement;
+        }
+    </script>
+</body>
+</html>
